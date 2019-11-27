@@ -5,8 +5,8 @@ var fs = require('fs');
 var express = require('express');
 var serveIndex = require('serve-index');
 var app = express();
-app.use(serveIndex('./public'));
-app.use(express.static('./public'));
+app.use(serveIndex('../public'));
+app.use(express.static('../public'));
 //http server
 var http_server = http.createServer(app);
 http_server.listen(8008,'0.0.0.0');
