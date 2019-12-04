@@ -5,12 +5,13 @@ var fs = require('fs');
 var express = require('express');
 var serveIndex = require('serve-index');
 var app = express();
-app.use(serveIndex('../public'));
-app.use(express.static('../public'));
+var socketIo = require('socket.io');
+app.use(serveIndex('../../webserver'));
+app.use(express.static('../../webserver'));
 //http server
 var http_server = http.createServer(app);
+socketIo = listen(http_server);
 http_server.listen(8008,'0.0.0.0');
-
 //var options = {
 //}
 //https server
